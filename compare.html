@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Comparison</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">📊 Stock Comparison</nav>
+
+<h1 class="title">Compare Two Stocks</h1>
+
+<div class="dashboard">
+
+    <div class="prediction-card" style="width:100%">
+        <table border="1" width="100%" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th id="stockA">Stock A</th>
+                    <th id="stockB">Stock B</th>
+                </tr>
+            </thead>
+            <tbody id="compareTable"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='compare.js') }}"></script>
+</body>
+</html>

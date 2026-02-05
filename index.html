@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Stock Predictor</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Plotly (used on result page, safe to keep) -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    📊 AI Stock Analysis Platform
+</nav>
+
+<!-- PAGE TITLE -->
+<h1 class="title">Predict Market Direction Instantly</h1>
+
+<!-- DASHBOARD (CENTERED) -->
+<div class="dashboard">
+
+    <!-- CENTER PANEL -->
+    <div class="left-panel">
+
+        <!-- SEARCH BOX -->
+        <div class="box">
+            <form id="predictForm">
+                <label><strong>Search Company / Stock Symbol</strong></label><br><br>
+
+                <input
+                    type="text"
+                    id="symbolInput"
+                    placeholder="Type company name (e.g. Reliance, TCS, AMZN)"
+                    autocomplete="off"
+                    required
+                >
+
+                <div id="suggestions" class="suggestions"></div>
+
+                <br>
+
+                <button type="submit">Predict</button>
+
+                <button type="button" id="compareBtn" style="margin-top:10px;">
+                    Compare Two Stocks
+                </button>
+            </form>
+        </div>
+
+        <!-- LOADER -->
+        <div id="loader" class="loader"></div>
+
+    </div>
+</div>
+
+<!-- ALERT BOX -->
+<div id="alertBox" class="alertBox"></div>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

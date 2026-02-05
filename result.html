@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Analysis</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar">
+    📊 Stock Analysis Result
+</nav>
+
+<h1 class="title" id="companyTitle">Analyzing...</h1>
+
+<div class="dashboard">
+
+    <div class="left-panel">
+
+        <div class="live-card">
+            <div class="live-header">
+                <span id="liveSymbol">--</span>
+                <span id="livePrice">₹ --</span>
+            </div>
+            <div id="liveChange" class="live-change">--</div>
+        </div>
+
+        <div class="prediction-card">
+            <h3>Prediction Output</h3>
+
+            <p id="trendResult">Trend (SMA): --</p>
+            <p id="mlResult">ML Prediction: --</p>
+
+            <hr>
+
+            <p><strong>Recommendation:</strong>
+                <span id="recommendationText">--</span>
+            </p>
+
+            <p><strong>Confidence:</strong>
+                <span id="confidenceText">--</span>%</p>
+
+            <ul id="reasonList"></ul>
+            <hr>
+<h4>Why this prediction?</h4>
+<ul id="explainList"></ul>
+
+        </div>
+
+    </div>
+
+    <div class="right-panel">
+        <div id="loader" class="loader"></div>
+        <div id="chart" class="chart-container"></div>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='result.js') }}"></script>
+</body>
+</html>
